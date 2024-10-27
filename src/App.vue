@@ -1,223 +1,430 @@
 <template>
-  <nav class="bg-gray-100 p-4 shadow-bottom">
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo -->
-      <a href="#" class="text-blue-800 text-5xl font-semibold no-underline">Fibre</a>
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside
+      :class="[
+        'fixed inset-y-0 left-0 w-64 bg-gray-900 text-gray-300 transform transition-transform duration-300 ease-in-out',
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+        'md:translate-x-0' // Ensures sidebar is always visible on larger screens
+      ]"
+    >
+      <div class="p-4">
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center">
+          <img
+            src="https://cdn.dribbble.com/userupload/16915703/file/original-d4f59f0b0791f2ba9ed681a4094fc861.png?resize=752x564"
+            alt="Profile"
+            class="rounded-full w-24 h-24"
+          />
+          <h2 class="text-white mt-4 text-lg font-semibold">HAMZAH TAOFEEQ</h2>
+        </div>
 
-      <!-- Hamburger Menu (Visible on Mobile) -->
-      <button @click="toggleMenu" class="text-blue-800 md:hidden text-4xl">
-        <i class="bi bi-list"></i>
-      </button>
+        <!-- Navigation Links -->
+        <nav class="mt-8 space-y-8 text-2xl">
+          <a href="#home" class="hover:text-white">
+            <i class="bi bi-house mr-3 "></i> Home
+          </a>
+          <a href="#about" class="block hover:text-white">
+            <i class="bi bi-file-person mr-3"></i> About
+          </a>
+          <a href="#resume" class="block hover:text-white">
+            <i class="bi bi-journal-bookmark mr-3"></i> Resume
+          </a>
+          <a href="#services" class="block hover:text-white">
+            <i class="bi bi-hdd-stack mr-3"></i> Services
+          </a>
+          <a href="#contact" class="block hover:text-white">
+            <i class="bi bi-envelope-heart mr-3"></i>Contact
+          </a>
+        </nav>
+      </div>
+    </aside>
 
-      <!-- Navigation Links (Visible on Desktop) -->
-      <ul class="hidden md:flex space-x-6 md:space-x-3 mt-4">
-        <li><a href="#" class="text-black md:text-3xl font-bold no-underline">Community</a></li>
-        <li><a href="#" class="text-black md:text-3xl no-underline font-bold ">Pricing</a></li>
-        <li><a href="#" class="text-black md:text-3xl no-underline font-bold ">features</a></li>
-      </ul>
-      <div class="flex flex-row gap-3" >
-      <button class="md:text-2xl font-bold text-black hidden md:flex mt-6" >Sign In</button>
-      <button class="md:text-2xl font-bold  w-32 h-16 text-white bg-blue-700 rounded-xl hidden md:flex justify-center items-center " >Sign Up</button>
-    </div>
-    </div>
-    <div>  
-    </div>
-  </nav>
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Mobile Header with Hamburger Icon -->
+      <header class="p-4 bg-gray-900 text-white flex justify-between items-center md:hidden">
+        <button @click="toggleSidebar">
+          <i class="bi bi-list text-xl"></i> <!-- Hamburger Menu Icon -->
+        </button>
+        <h1 class="text-lg">HAMZAH TAOFEEQ</h1>
+      </header>
 
-  <!-- Sidebar for Mobile -->
-  <div :class="menuOpen ? 'translate-x-0' : 'translate-x-full'" class="fixed top-0 right-0 w-2/3 md:w-1/4 h-full bg-gray-200 opacity-50 text-white transition-transform transform z-50 md:hidden">
-    <div class="p-4 flex justify-between items-center">
-      <span class="text-blue-800 text-4xl font-semibold md:text-2xl">Fibre</span>
-      <button @click="toggleMenu" class="text-gray-400">
-        <i class="bi bi-x text-7xl text-blue-800"></i>
-      </button>
-    </div>
-    <ul class="p-4">
-      <li><a href="#" class=" text-blue-800 hover:text-black text-3xl">Community</a></li>
-      <li><a href="#" class=" text-blue-800 hover:text-black text-3xl">Pricing</a></li>
-      <li><a href="#" class=" text-blue-800 hover:text-black text-3xl">Features</a></li>
-    </ul>
-  </div>
-  <!-- Overlay when Menu is Open -->
-  <div v-if="menuOpen" @click="toggleMenu" class="fixed inset-0 bg-black opacity-50 z-40 md:hidden"></div>
-   <!-- images -->
-
-  <div class=" bg-white w-full h-[1050px] md:h-[600px] flex flex-col  md:flex md:flex-row-reverse items-center px-4 mt-5">
+      <!-- Main Section with Image and Text -->
+      <main>
+      <video class="home flex-1 bg-cover bg-center text-white flex items-center justify-center p-4" id="home"
+      autoplay 
+      loop 
+      muted 
+      playsinline >
+    <source src="https://cdn.dribbble.com/users/1342032/screenshots/9534052/media/a1854b0b345c111867909c77cf08883a.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+      </main>
+      <!-- About section -->
+      <div class="ml-10 md:ml-72 px-4 mt-7">
+          <h1 class="about text-4xl  font-bold text-gray-800" id="about" >ABOUT</h1>
+          <div class="border-b-4 border-blue-600 w-32 mt-2" ></div>
+          <p class="mt-4 text-lg">I'm web developer!
+            I am a skilled web developer with two years of experience in creating innovative and user-friendly web applications. 
+            I have a strong foundation in [HTML, CSS, JavaScript] and am proficient in using popular frameworks like [Vue, Tailwind, Bootstrap].
+        Throughout my career, I have successfully developed so a few good projct, demonstrating my ability to deliver high-quality web solutions. 
+            I am passionate about staying up-to-date with the latest web development trends and technologies.
+          </p>
+          <!-- web Section -->
+            <div class="mt-7" >
+              <h1 class="text-4xl  font-bold text-gray-800"  >WEB DEVELOPER</h1>
+              <p class="text-lg" >A dedicated and proficient developer and technical writer,always ready to meet the 
+                neccessary demand from my clients.</p>
+                <div class="grid grid-cols-1 md:grid md:grid-cols-2" >
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Birthday:</p>
+                    <p class="text-lg" >24th, March, 2006</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">loaction:</p>
+                    <p class="text-lg" >riyadh</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Phone:</p>
+                    <p class="text-lg" >08137628419</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Degree:</p>
+                    <p class="text-lg" >Bsc, computer science</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Email:</p>
+                    <p class="text-lg" >taofeeqifedollar <br> @gmail.com</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Age:</p>
+                    <p class="text-lg" >18</p>
+                  </div>
+                  <div class="flex flex-row space-x-3" >
+                    <i class="bi bi-chevron-double-right text-lg text-blue-600"></i>
+                    <p class="text-lg font-bold">Freelance:</p>
+                    <p class="text-lg" >Available</p>
+                  </div>
+                </div>
+                <p class="mt-5 text-lg" >A dedicated and proficient developer and technical writer,always ready to meet the neccessary demand from my clients</p>
+            </div>
+            <!-- emoji Section -->
+            <div class="grid grid-cols-1 mt-5 md:grid md:grid-cols-3" >
+              <div class="flex flex-row gap-3" >
+                <i class="bi bi-emoji-smile text-5xl text-blue-600"></i>
+                <div class="flex flex-col" >
+                <p class="text-5xl font-bold" >20</p>
+                <p>Happy clients...... always happy to help</p>
+              </div>
+              </div>
+              <div class="flex flex-row gap-3 md:ml-5" >
+                <i class="bi bi-kanban text-5xl text-blue-600"></i>
+                <div class="flex flex-col" >
+                <p class="text-5xl font-bold" >15</p>
+                <p>Projects dedicated to work</p>
+              </div>
+              </div>
+              <div class="flex flex-row gap-3 md:ml-5" >
+                <i class="bi bi-headset text-5xl text-blue-600"></i>
+                <div class="flex flex-col" >
+                <p class="text-5xl font-bold" >10</p>
+                <p>Hours of support working with good group</p>
+              </div>
+              </div>
+              <div class="flex flex-row gap-3 md:ml-5" >
+                <i class="bi bi-person-lines-fill text-5xl text-blue-600"></i>
+                <div class="flex flex-col" >
+                <p class="text-5xl font-bold" >5</p>
+                <p>Hard Workers Great Workers</p>
+              </div>
+              </div>
+            </div> 
+        </div> 
+        <!-- skill Section -->
+       
+        <div class="bg-blue-100 mt-10 w-auto h-[400px]" >
+          <div class="ml-10 md:ml-72 px-4" >
+          <h1 class="text-4xl  font-bold text-gray-800 mt-5">SKILL</h1>
+          <div class="border-b-4 border-blue-600 w-28 mt-2" ></div>
+          <p class="mt-3" >the level of my skill as a frontend developer</p>
+          <div class="p-6">
+  <!-- Skill Bars Wrapper -->
+  <div class="grid grid-cols-2 gap-4">
+    <!-- HTML Skill Bar -->
     <div>
-   <img src="https://cdn.dribbble.com/userupload/8386663/file/original-84c8796fd5fdc73682b46b9dd8a70fcb.jpg?resize=752x536" 
-  class="rounded-full lg:h-[400px] lg:w-[400px] h-[300px] w-[300px] md:w-[250px] md:h-[250px] ">
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>HTML</span>
+        <span>100%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 100%"></div>
+      </div>
+    </div>
+
+    <!-- React Skill Bar -->
+    <div>
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>TAILWIND</span>
+        <span>100%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 100%"></div>
+      </div>
+    </div>
+
+    <!-- CSS Skill Bar -->
+    <div>
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>BOOTSTRAP</span>
+        <span>90%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 90%"></div>
+      </div>
+    </div>
+
+    <!-- Technical Writing Skill Bar -->
+    <div>
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>CSS</span>
+        <span>90%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 90%"></div>
+      </div>
+    </div>
+
+    <!-- JavaScript Skill Bar -->
+    <div>
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>JAVASCRIPT</span>
+        <span>75%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 75%"></div>
+      </div>
+    </div>
+
+    <!-- Tailwind Skill Bar -->
+    <div>
+      <div class="flex justify-between text-sm font-bold mb-1">
+        <span>VUE</span>
+        <span>85%</span>
+      </div>
+      <div class="w-full bg-gray-300 h-2 rounded">
+        <div class="bg-blue-500 h-full rounded" style="width: 85%"></div>
+      </div>
+    </div>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>
+<!-- resume Section -->
+<div class="ml-10 md:ml-72 px-4 mt-10" >
+<h1 class="resume text-4xl  font-bold text-gray-800 mt-28" id="resume">RESUME</h1>
+      <div class="border-b-4 border-blue-600 w-40 mt-2" ></div>
+      <p class="mt-5" >I am a skilled web developer with two years of experience in creating innovative and user-friendly web applications. 
+        I have a strong foundation in [HTML, CSS, JavaScript] and am proficient in using popular frameworks like [Vue, Tailwind, Bootstrap]. 
+        Throughout my career, I have successfully developed so many good projects, demonstrating my ability to deliver high-quality web solutions. 
+        I am passionate about staying up-to-date with the latest web development trends and technologies.</p>
+    </div>
+
+    <!-- summary Section -->
+    <div class="ml-10 md:ml-72 px-6 mt-32 md:grid md:grid-cols-2 md:space-x-5" >
+  <!-- Education Section -->
+  <div class="">
+    <h2 class="text-xl font-bold uppercase mb-4">Education</h2>
+    <div class="relative">
+      <!-- Blue Line -->
+      <div class="absolute left-1 top-0 h-full w-1 bg-blue-500"></div>
+      
+      <!-- Timeline Item 1 -->
+      <div class="flex items-start mb-8">
+        <div class="w-4 h-4 bg-white border-2 border-blue-500 rounded-full mt-1.5 relative z-10"></div>
+        <div class="ml-6">
+          <h3 class="font-bold">Secondary school Certificate</h3>
+          <p class="text-sm text-gray-600">2008-2022</p>
+          <p class="italic text-gray-700">Grait international college</p>
+          <p>Best student of the year doing great .. in being creative</p>
+        </div>
+      </div>
+
+      <!-- Timeline Item 2 -->
+      <div class="flex items-start mb-8">
+        <div class="w-4 h-4 bg-white border-2 border-blue-500 rounded-full mt-1.5 relative z-10"></div>
+        <div class="ml-6">
+          <h3 class="font-bold">O'Level Certificate</h3>
+          <p class="text-sm text-gray-600">2020 - 2022</p>
+          <p class="italic text-gray-700">Grait international college</p>
+          <p>Best in technical writing and fluent English speaking</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <div>
+    <h2 class="text-xl font-bold uppercase mb-4">Experience</h2>
+
+    <!-- Timeline Wrapper with Blue Line -->
+    <div class="relative">
+      <!-- Blue Line -->
+      <div class="absolute left-1 top-0 h-full w-1 bg-blue-500"></div>
+
+      <!-- Experience Item 2 -->
+      <div class="flex items-start mb-8">
+        <div class="w-4 h-4 bg-white border-2 border-blue-500 rounded-full mt-1.5 relative z-10"></div>
+        <div class="ml-6">
+          <h3 class="font-bold">Web Developer</h3>
+          <p class="text-sm text-gray-600">2024 August - Present</p>
+          <p class="italic text-gray-700">TechHub, oxbridge schools Tech Hub</p>
+          <ul class="list-disc ml-5 text-gray-700">
+            <li>Developed numerous websites (eCommerce,  exams website, etc.)</li>
+            <li>Managed up to 5 projects or tasks at a time under pressure</li>
+            <li>Recommended and consulted with clients on the most appropriate web development</li>
+          </ul>
+        </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- services section -->
+<div class="ml-10 md:ml-72 px-4 mt-10" >
+  <h1 class="services text-4xl  font-bold text-gray-800 mt-28" id="services">SERVICES</h1>
+      <div class="border-b-4 border-blue-600 w-40 mt-2" ></div>
+      <p class="mt-3" >A dedicated and proficient developer and technical writer,always ready to meet
+         the neccessary demand from my clients</p>
+      <div class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-9" >
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-32 h-16"><i class="bi bi-hurricane text-4xl text-white flex justify-center items-center pt-3"></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Web development</h1>
+            <p>Building an interactive and engaging webites that suits our clients desires</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-24 h-16"><i class="bi bi-pen text-4xl flex justify-center items-center pt-3 text-white"></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Technical Writing</h1>
+            <p>Give details to every single steps in building websites</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-16 h-16"><i class="bi bi-train-freight-front text-white text-4xl flex justify-center items-center pt-3"></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Freelance</h1>
+            <p>Open for freelance jobs</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-20 h-16"><i class="bi bi-snow text-white text-4xl flex justify-center items-center pt-3"></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Consultation</h1>
+            <p>Maximum attention always assured</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-24 h-16"><i class="bi bi-kanban text-white text-4xl flex justify-center items-center pt-3"></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Problem Solving</h1>
+            <p>Always willing to break down the complex works</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-3" >
+          <div class="bg-blue-500 w-24 h-16"><i class="bi bi-person-lines-fill text-4xl flex justify-center pt-3 text-white  "></i></div>
+          <div class="flex flex-col" >
+            <h1 class="text-2xl font-bold hover:text-blue-500" >Fluent Communication</h1>
+            <p>Making it very easy for our client to relate with us</p>
+          </div>
+        </div>
+    
+      </div>
+</div>
+<!-- contact section -->
+<div class="ml-10 md:ml-72 px-4 mt-10" >
+  <h1 class="contact text-4xl  font-bold text-gray-800 mt-28" id="contact">CONTACT</h1>
+      <div class="border-b-4 border-blue-600 w-40 mt-2" ></div>
+       <p class="mt-3" >I will always love to get your feedback in other for me to relate very well</p>
+       <!-- box section -->
+       <div data-aos="zoom-in">
+       <div class="flex justify-center" >
+       <div class=" md:flex md:justify-center pl-10 md:pl-0 mt-10 shadow-lg bg-white w-[1200px] h-[1000px] md:h-[700px]">
+        <div class="mt-7 grid grid-cols-1 md:grid md:grid-cols-2 gap-36 " >
+          <div class="flex flex-col " >
+        <h1>Your Name</h1>
+        <input type="text" class="bg-white text-black border-2 border-gray-500 hover:border-blue-600
+        p-2 rounded h-14 w-96 mt-3" >
+      </div>
+      <div class="flex flex-col -mt-28 md:mt-0" >
+        <h1>Your Email</h1>
+        <input type="text" class="bg-white text-black border-2 border-gray-500 hover:border-blue-600
+        p-2 rounded h-14 mt-3 w-96" >
+      </div>
+      <div class="-mt-36 flex flex-col" >
+        <h1>Subject</h1>
+        <input type="text" class="bg-white text-black border-2 border-gray-500 hover:border-blue-600
+        p-2 rounded h-14 mt-3 w-[500px]" >
+        <h1 class="mt-10" >Message</h1>
+        <input type="text" class="bg-white text-black border-2 border-gray-500 hover:border-blue-600
+        p-2 rounded h-40 mt-3 w-[500px]" >
+      </div>
+       </div>
+      </div>
+       </div>
+       </div>
 </div> 
-    <div class="mt-5 md:mt-0 lg:mt-0" >
-      <div class="flex flex-row text-orange-600 gap-3">
-      <i class="bi bi-star-fill text-xl"></i>
-      <i class="bi bi-star-fill text-xl"></i>
-      <i class="bi bi-star-fill text-xl"></i>
-      <i class="bi bi-star-fill text-xl"></i>
-      <i class="bi bi-star-fill text-xl"></i>
-      <div class="text-gray-500" >
-        <h1 class=" text-xl font-bold" >Rated 4.8/5 (284 reviews)</h1>
-      </div>
-    </div>
-    <h1 class="text-2xl font-bold  text-black" >Create your porfolio in minutes</h1>
-    <h1 class="text-xl text-gray-500" >With fiber you can Setup your own 
-      <br> personal portfolio in minutes
-      <br>  with dozens of premade beautiful templates.</h1>
-      <div class="flex flex-col md:flex md:flex-row items-center gap-24" >
-        <a href="wa.me08137628419"
-         class="text-2xl  no-underline font-bold w-48 mt-3 h-16
-            text-white bg-blue-700 rounded-xl flex justify-center items-center " 
-         >Start free trial</a>
-        <a href="wa.me08137628419" 
-        class=" text-2xl text-blue-600 underline md:mt-5 font-bold -mt-20">View Examples</a>
-      </div>
-      <div class="mt-3 flex flex-col md:flex md:flex-row gap-1 md:gap-4" >
-      <div class="mt-3 flex flex-row gap-2" >
-        <i class="bi bi-check-circle-fill text-green-500 text-3xl md:text-4xl"></i>
-        <h1 class="text-gray-500 text-3xl md:text-4xl ">No credit card required</h1> 
-      </div>
-      <div class="mt-3 flex flex-row gap-2" >
-        <i class="bi bi-check-circle-fill text-green-500 text-3xl md:text-4xl"></i>
-        <h1 class="text-gray-500 text-3xl md:text-4xl ">No credit card required</h1> 
-      </div>
-    </div>
-  </div>
-  </div>
-  <div data-aos="zoom-in">
-  <div class="ml-5 px-4 mt-5" >
-    <h1 class="text-blue-800 text-2xl font-bold" >Why fibre</h1>
-    <h1 class="text-4xl mt-3 font-bold" >A good portfolio means good employability</h1>
-   <div class="flex flex-col mt-10 md:flex md:flex-row gap-5" >
-    <div class="md:flex md:flex-col" >
-    <i class="bi bi-alarm text-4xl text-blue-600"></i>
-    <h1 class="text-black font-bold text-3xl mt-1" >Build in minutes</h1>
-    <h1 class="text-xl text-gray-500" >With a selection of premade templates, you can build out a portfolio in less than 10 minutes</h1>
-     </div>
-     <div class="md:flex md:flex-col" >
-    <i class="bi bi-arrow-left-right text-4xl text-blue-600 mt-3"></i>
-    <h1 class="text-black font-bold text-3xl mt-1">Add custom CSS</h1>
-    <h1 class="text-xl text-gray-500">Customize your personal porfolio even more with the ability to add your own custom CSS styles</h1>
-    </div>
-    <div class="md:flex md:flex-col" >
-    <i class="bi bi-phone-flip text-4xl text-blue-600 mt-3"></i>
-    <h1 class="text-black font-bold text-3xl mt-1">Responsive</h1>
-    <h1 class="text-xl text-gray-500">ALl fiber templates are fully responsive to ensure the experience is seemless across all devices</h1>
-    </div>
-  </div>
+<!-- with section -->
+<div class="bg-blue-100 h-[200px] flex justify-center items-center" >
+<h1 class="md:text-2xl text-lg" >@code_with_Taofeeq</h1>
 </div>
-<div data-aos="zoom-in">
-    <div class="container bg-blue-800 w-[700px] md:h-[500px] h-[600px] rounded-lg mt-5" >
-      <h1 class="text-white pt-3 ml-9 text-4xl" >Diversify your portfolio.</h1>
-      <h1 class="text-white pt-3 ml-9 text-xl" >Create an even more impressing portfolios by creating case studies for your projects. simply follow our step by step guide</h1>
-      <a href="wa.me08137628419" class="text-xl md:text-4xl no-underline font-bold w-52 ml-9 md:w-72 mt-3 h-16 md:h-16 text-blue-800 bg-white rounded-lg flex justify-center items-center " >Start free trial</a>
-    <img src="https://cdn.dribbble.com/userupload/10740100/file/original-8e94725341c91ba8184bbdb21b6adc71.png?resize=1600x1200"
-     class="w-[250px] ml-[30px] h-[215px] lg:w-[450px] md:w-[450px] md:mt-8 md:h-[260px] lg:h-[300px] md:ml-[200px] lg:ml-[500px] mt-6 lg:mt-0">
-   </div>
-  </div>
-</div>
-<div data-aos="zoom-in">
-  <div class="md:flex md:flex-row gap-20 mt-16 px-20 lg:-ml-10 md:ml-10 md:justify-center " >
-  <div class="mt-10 flex flex-col  items-center" >
-    <div class="border-2 md:-ml-3 lg:ml-10 border-gray-500 w-72 h-72 md:w-[300px] md:h-[450px] lg:w-[450px] lg:h-[400px] rounded-lg px-4" >
-      <div class="flex flex-row" >
-      <img src="https://cdn.dribbble.com/userupload/16216368/file/original-74a100b764fc01baa9e42baf4c5b7e45.png?resize=752x564"
-      class="h-[100px] w-[100px] rounded-full" >
-      <div>
-      <h1 class="text-blue-800 md:text-4xl text-3xl" >wayne</h1>
-      <h1 class="text-xl  md:text-2xl" >100k in revenue</h1>
+<!-- ending -->
+            </div>
     </div>
-    </div>
-    <div>
-      <h1 class="text-gray-500 text-sm lg:text-2xl md:text-xl" > setting up my porfolio with fibre took me not more than 10minutes. since then my portfolio has attracted a lot of clients and made over $100k</h1>
-      <div class="md:ml-10  border-2 border-gray-500 w-60 h-11 rounded-lg px-4 mt-4 flex justify-center items-center lg:w-[350px] lg:h-[50px] md:w-[200px] md:h-[80px]" >
-        <h1 class="text-lg text-blue-800 font-bold lg:text-2xl md:text-xl" >View Wayne porfolio</h1>
-      </div>
-    </div>
-    </div>
+
+    <!-- Overlay for Mobile Sidebar -->
+    <div
+      v-if="sidebarOpen"
+      class="fixed inset-0 bg-black opacity-50 md:hidden"
+      @click="toggleSidebar"
+    ></div>
   </div>
-  <div class="mt-10 flex flex-col  items-center" >
-    <div class="border-2 border-gray-500 w-72 h-72 rounded-lg px-4 md:w-[300px] md:h-[450px] lg:w-[450px] lg:h-[400px]" >
-      <div class="flex flex-row" >
-      <img src="https://cdn.dribbble.com/userupload/16448774/file/original-a088bc300823204bd1a5240d4e722a00.png?resize=752x564"
-      class="h-[100px] w-[100px] rounded-full  mt-3" >
-      <div class="ml-5" >
-      <h1 class="text-blue-800  lg:text-6xl md:text-3xl" >Matthew</h1>
-      <h1 class="text-xl md:text-2xl" >20k in revenue</h1>
-    </div>
-    </div>
-    <div>
-      <h1 class="text-gray-500 text-sm lg:text-2xl md:text-xl" > I have been getting A LOT of leads ever since I used Fiber's premade templates, now I just need to work on my case studies and I'll be ready to go!</h1>
-      <div class=" md:ml-10 border-2 border-gray-500 w-60 h-11 rounded-lg px-4 mt-2 flex justify-center items-center lg:w-[350px] lg:h-[50px] md:w-[200px] md:h-[80px]" >
-        <h1 class="text-lg text-blue-800 font-bold lg:text-2xl md:text-xl" >View Matt porfolio</h1>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
-</div>
-<div data-aos="zoom-in">
-<div class="bg-gray-100 h-[800px] md:h-[500px] shadow-top mt-28 grid grid-cols-2 gap-10 md:grid md:grid-cols-4 px-4" >
-  <div class="flex flex-col gap-2" >
-    <h1>Fibre</h1>
-    <h1 class="text-lg" >With fibre you can set up your own personal portfolio in minutes with dozens of premade, beautiful templates.</h1>
-  </div>
-  <div class="flex flex-col gap-2" >
-    <h1>Sitemap</h1>
-    <h1 class="text-lg" >Homepage</h1>
-    <h1 class="text-lg" >Testimonials</h1>
-    <h1 class="text-lg" >Pricing</h1>
-    <h1 class="text-lg" >Features</h1>
-  </div>
-  <div class="flex flex-col gap-2" >
-    <h1>Resources</h1>
-    <h1 class="text-lg" > Support</h1>
-    <h1 class="text-lg" > Contact</h1>
-    <h1 class="text-lg" > FAQ </h1>
-  </div>
-  <div class="flex flex-col gap-2" >
-    <h1>Company</h1>
-    <h1 class="text-lg" >About</h1>
-    <h1 class="text-lg" >Customers</h1>
-    <h1 class="text-lg" > Blog</h1>
-  </div>
-  <div class="flex flex-col gap-2" >
-    <h1>Portfolio</h1>
-    <h1 class="text-lg" >wayne</h1>
-    <h1 class="text-lg" >Matthew</h1>
-  </div>
-</div>
-</div>
 </template>
 
 <script>
+import { onMounted } from 'vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 export default {
-  data () {
+  data() {
     return {
-      menuOpen: false,
+      sidebarOpen: false, // Sidebar state
     };
   },
   methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
+    toggleSidebar() {
+      this.sidebarOpen = !this.sidebarOpen; // Toggles sidebar
     },
   },
-  mounted() {
-    AOS.init();
+  setup() {
+    onMounted(() => {
+      AOS.init();
+    });
   }
 };
 </script>
 
-<style>
-  .shadow-bottom {
-    @apply shadow-none; /* Ensure no default shadow */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-  }
-  .shadow-top {
-    @apply shadow-none; /* Ensure no default shadow */
-    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.3);
-  }
- 
+<style scoped>
+/* You can add any additional styles here */
+html {
+    scroll-behavior: smooth;
+}
 
 </style>
