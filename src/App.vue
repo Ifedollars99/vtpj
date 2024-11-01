@@ -63,7 +63,7 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
    
   </div>
    <div class="md:grid md:grid-cols-2 md:gap-[400px] lg:gap-[550px] md:pl-16 lg:ml-16 
-   md:px-4 lg:px-0 px-0 lg:-mt-96 xl:mt-40 "  >
+   md:px-4 lg:px-0 px-0 md:-mt-72 lg:-mt-96 xl:mt-60 "  >
   <div class="bg-white shadow-lg md:-mt-48 mt-16 md:my-2  md:w-[350px] md:h-[420px] lg:w-[500px] lg:h-[300px] rounded-lg">
     <div class="px-4 " > 
       <div class="flex flex-row justify-between" >
