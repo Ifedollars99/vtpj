@@ -1,9 +1,11 @@
 <template>
 <div class="bg-gray-100 max-w-full h-full md:h-screen grid grid-cols-1 
 md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center 
-">
-  <div class="bg-white shadow-lg w-[300px] mt-3 md:mt-0 h-[200px] md:w-[500px] md:h-[300px] rounded-xl p-6">
-    <div class="flex flex-row justify-between px-4" >
+ " >
+  <div class="bg-white shadow-lg w-[300px]
+   mt-3 md:mt-0 h-[200px] md:w-[300px] md:h-[300px] 
+   lg:w-[500px] rounded-xl p-6 md:-ml-24 ml-0 lg:ml-0 ">
+    <div class="flex flex-row justify-between" >
       <h1 class="text-2xl font-bold" >Sales Overview</h1>
       <i class="bi bi-three-dots text-gray-300 text-3xl"></i>
     </div>
@@ -13,7 +15,7 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
   </div>
 
     <div class="relative md:w-[200px] md:h-[300px] bg-green-600 rounded-xl
-     p-6 text-white shadow-lg max-w-xs overflow-hidden mt-11 md:mt-0">
+     p-6 text-white shadow-lg max-w-xs overflow-hidden mt-11 md:mt-0 lg:ml-16 xl:ml-0 md:ml-0 ml-0 ">
   <!-- Background Circle Overlay -->
   <div class="absolute inset-20 bg-green-200 opacity-20 rounded-full w-3/4 h-3/4 top-10 right-10"></div>
 
@@ -37,22 +39,22 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
   </div>
 </div>
 
-  <div class="flex flex-col gap-10 md:-ml-36" >
-  <div class="bg-white shadow-lg md:w-[280px] md:h-[130px] rounded-lg px-6 md:mt-0 mt-11">
+  <div class="flex flex-col gap-10 md:-ml-2 lg:-ml-36" >
+  <div class="bg-white shadow-lg md:w-[200px] lg:w-[280px] md:h-[130px] rounded-lg px-6 md:mt-0 mt-11">
     <h1 class="text-2xl font-bold mt-3" >All Orders</h1>
     <div class="flex flex-row gap-4" >
     <h1 class="mt-3 text-5xl" >128.1k</h1>
-    <div class="flex flex-row bg-green-200 gap-3 h-7 w-12 mt-4" >
+    <div class="flex flex-row bg-green-200 gap-3 h-7 w-8 mt-4 md:-ml-5 lg:ml-0 ml-0" >
         <i class="bi bi-arrow-bar-up w-0.5 h-0.5 text-green-600"></i>
         <h1 class="text-sm  text-green-600" >56%</h1>
   </div>
   </div>
   </div>
-  <div class="bg-white shadow-lg md:w-[280px] md:h-[130px] rounded-lg px-6">
-    <h1 class="text-2xl font-bold mt-3" >Order Created</h1>
+  <div class="bg-white shadow-lg md:w-[200px] lg:w-[280px] md:h-[130px] rounded-lg px-6">
+    <h1 class="text-2xl md:text-xl lg:text-2xl font-bold mt-3" >Order Created</h1>
     <div class="flex flex-row gap-4" >
     <h1 class="mt-3 text-5xl" >1,90M</h1>
-    <div class="flex flex-row bg-red-200 gap-3 h-7 w-12 mt-4" >
+    <div class="flex flex-row bg-red-200 md:-ml-5 lg:ml-0 ml-0 gap-3 h-7 w-12 mt-4" >
         <i class="bi bi-arrow-bar-up w-0.5 h-0.5 text-red-600"></i>
         <h1 class="text-sm  text-red-600" >2%</h1>
   </div>
@@ -60,18 +62,19 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
   </div>
    
   </div>
-   <div class="md:grid md:grid-cols-2 md:gap-[550px] md:pl-16" >
-  <div class="bg-white shadow-lg md:w-[500px] md:h-[300px] rounded-lg">
-    <div class="px-4 mt-16 md:mt-3" >
+   <div class="md:grid md:grid-cols-2 md:gap-[400px] lg:gap-[550px] md:pl-16 lg:ml-16 
+   md:px-4 lg:px-0 px-0 lg:-mt-96 xl:mt-40 "  >
+  <div class="bg-white shadow-lg md:-mt-48 mt-16 md:my-2  md:w-[350px] md:h-[420px] lg:w-[500px] lg:h-[300px] rounded-lg">
+    <div class="px-4 " > 
       <div class="flex flex-row justify-between" >
       <h1 class="text-xl font-bold" >Highest campaign</h1>
       <i class="bi bi-three-dots text-2xl text-gray-500"></i>
     </div>
     <div class="flex flex-row justify-around text-gray-500 mt-2" >
       <h1 class="text-sm -ml-7" >Influencer</h1>
-      <h1 class="text-sm ml-14">Spend</h1>
-      <h1 class="text-sm -ml-20">Goal</h1>
-      <h1 class="text-sm -ml-20" >Sales</h1>
+      <h1 class="text-sm ml-2 md:ml-0 lg:ml-2">Spend</h1>
+      <h1 class="text-sm -ml-20 md:ml-0 lg:-ml-20">Goal</h1>
+      <h1 class="text-sm -ml-20 md:ml-0 lg:-ml-20" >Sales</h1>
     </div>
     <div class="flex flex-row justify-between mt-2" >
       <div class="flex flex-row gap-2" >
@@ -131,7 +134,7 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
     </div>
     </div>
   </div>
-  <div class="bg-white shadow-lg md:w-[550px] md:h-[300px] rounded-lg md:mt-0 mt-8">
+  <div class="bg-white shadow-lg md:w-[300px] md:h-[400px] lg:w-[550px] lg:h-[300px] rounded-lg md:-mt-48 mt-8">
     <div class="flex flex-row justify-between px-4 mt-2" >
       <h1 class="text-2xl font-bold" >Customer by time</h1>
       <i class="bi bi-three-dots text-gray-300 text-3xl"></i>
