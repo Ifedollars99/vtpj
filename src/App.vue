@@ -1,26 +1,24 @@
 <template>
-<div class="bg-gray-100 max-w-full h-full md:h-screen grid grid-cols-1 
-md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center 
- " >
-  <div class="bg-white shadow-lg w-[300px]
-   mt-3 md:mt-0 h-[200px] md:w-[300px] md:h-[300px] 
-   lg:w-[500px] rounded-xl p-6 md:-ml-24 ml-0 lg:ml-0 ">
-    <div class="flex flex-row justify-between" >
+  <div class="bg-gray-100 h-full md:h-screen" >
+  <div class="animate-ping flex justify-center sm:text-4xl font-serif text-green-500 hover:text-gray-300 " >Taofeeq's project</div>
+  <div class=" m-4 grid gap-4 md:grid-cols-12 mt-5">
+    <div class="sm:col-span-6 bg-white min-h-[300px] rounded-lg shadow-lg px-4" >
+      <div class="flex flex-row justify-between mt-2">
       <h1 class="text-2xl font-bold" >Sales Overview</h1>
       <i class="bi bi-three-dots text-gray-300 text-3xl"></i>
     </div>
-    <div class="chart-container">
+    <div class="chart-container mt-3">
     <canvas id="myChart"></canvas>
   </div>
-  </div>
-
-    <div class="relative md:w-[200px] md:h-[300px] bg-green-600 rounded-xl
-     p-6 text-white shadow-lg max-w-xs overflow-hidden mt-11 md:mt-0 lg:ml-16 xl:ml-0 md:ml-0 ml-0 ">
+    </div>
+     <!-- Card Content -->
+    <div class="sm:col-span-2 relative
+      text-white  overflow-hidden min-h-[300px] rounded-lg bg-green-500 shadow-lg px-4" >
   <!-- Background Circle Overlay -->
-  <div class="absolute inset-20 bg-green-200 opacity-20 rounded-full w-3/4 h-3/4 top-10 right-10"></div>
+  <div class="absolute inset-20 bg-green-200 opacity-20 rounded-lg w-3/4 h-3/4 top-10 right-10"></div>
 
   <!-- Card Content -->
-  <div class="relative  space-y-28">
+  <div class="relative  space-y-44">
     <div class="flex flex-row justify-between" >
     <h2 class="text-lg font-semibold mt-1">Total Sales</h2>
     <i class="bi bi-three-dots text-4xl text-gray-300"></i>
@@ -39,19 +37,19 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
   </div>
 </div>
 
-  <div class="flex flex-col gap-10 md:-ml-2 lg:-ml-36" >
-  <div class="bg-white shadow-lg md:w-[200px] lg:w-[280px] md:h-[130px] rounded-lg px-6 md:mt-0 mt-11">
-    <h1 class="text-2xl font-bold mt-3" >All Orders</h1>
+    <div class="flex flex-col gap-3" >
+    <div class="sm:col-span-4 px-4 w-[250px] min-h-[200px] rounded-lg bg-white border border-gray-200 shadow-lg" >
+      <h1 class="text-2xl font-bold mt-3" >All Orders</h1>
     <div class="flex flex-row gap-4" >
     <h1 class="mt-3 text-5xl" >128.1k</h1>
-    <div class="flex flex-row bg-green-200 gap-3 h-7 w-8 mt-4 md:-ml-5 lg:ml-0 ml-0" >
+    <div class="flex flex-row bg-green-200 gap-3 h-7 w-11 mt-4 md:-ml-5 lg:ml-0 ml-0" >
         <i class="bi bi-arrow-bar-up w-0.5 h-0.5 text-green-600"></i>
         <h1 class="text-sm  text-green-600" >56%</h1>
   </div>
   </div>
-  </div>
-  <div class="bg-white shadow-lg md:w-[200px] lg:w-[280px] md:h-[130px] rounded-lg px-6">
-    <h1 class="text-2xl md:text-xl lg:text-2xl font-bold mt-3" >Order Created</h1>
+    </div>
+    <div class="sm:col-span-4 px-4 w-[250px] min-h-[200px] rounded-lg bg-white border border-gray-200 shadow-lg" >
+      <h1 class="text-2xl md:text-xl lg:text-2xl font-bold mt-3" >Order Created</h1>
     <div class="flex flex-row gap-4" >
     <h1 class="mt-3 text-5xl" >1,90M</h1>
     <div class="flex flex-row bg-red-200 md:-ml-5 lg:ml-0 ml-0 gap-3 h-7 w-12 mt-4" >
@@ -59,13 +57,13 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
         <h1 class="text-sm  text-red-600" >2%</h1>
   </div>
   </div>
+    </div>
+
   </div>
-   
   </div>
-   <div class="md:grid md:grid-cols-2 md:gap-[400px] lg:gap-[550px] md:pl-16 lg:ml-16 
-   md:px-4 lg:px-0 px-0 md:-mt-72 lg:-mt-96 xl:mt-60 "  >
-  <div class="bg-white shadow-lg md:-mt-48 mt-16 md:my-2  md:w-[350px] md:h-[420px] lg:w-[500px] lg:h-[300px] rounded-lg">
-    <div class="px-4 " > 
+  <div class="grid md:grid-cols-2  gap-4 px-4" >
+    <div class="min-h-[300px] rounded-lg bg-white border border-gray-200 shadow-lg" >
+      <div class="px-4 mt-3" > 
       <div class="flex flex-row justify-between" >
       <h1 class="text-xl font-bold" >Highest campaign</h1>
       <i class="bi bi-three-dots text-2xl text-gray-500"></i>
@@ -133,9 +131,9 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
       </div>
     </div>
     </div>
-  </div>
-  <div class="bg-white shadow-lg md:w-[300px] md:h-[400px] lg:w-[550px] lg:h-[300px] rounded-lg md:-mt-48 mt-8">
-    <div class="flex flex-row justify-between px-4 mt-2" >
+    </div>
+    <div class="min-h-[300px] rounded-lg bg-white border border-gray-200 shadow-lg " >
+      <div class="flex flex-row justify-between mt-4 px-4" >
       <h1 class="text-2xl font-bold" >Customer by time</h1>
       <i class="bi bi-three-dots text-gray-300 text-3xl"></i>
     </div>
@@ -213,17 +211,15 @@ md:grid md:grid-cols-3 md:pl-28 place-items-center justify-items-center
             </div>
         </div>
     </div>
-</div>
-
+    </div>
+    </div>
   </div>
-  </div>
-</div>
-
-  
+ </div>
+ 
 </template>
 
 <script>
-import Chart from 'chart.js/auto';
+  import Chart from 'chart.js/auto';
 
 
 const verticalLinePlugin = {
@@ -385,10 +381,17 @@ export default {
 </script>
 
 <style scoped>
+@keyframes ping {
+    75%, 100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+.animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
 .chart-container {
   max-width: 600px;
   margin: auto;
 }
-</style> 
-
- 
+</style>
